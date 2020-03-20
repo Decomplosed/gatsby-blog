@@ -16,6 +16,7 @@ export default ({ data }) => (
           <span>
             {node.frontmatter.title} - {node.frontmatter.date}
           </span>
+          <p>{node.excerpt}</p>
         </div>
       ))}
     </div>
