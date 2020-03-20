@@ -27,5 +27,11 @@ exports.createPages = ({ graphql, actions }) => {
       }
     }
   }
-  `)
+  `).then(result => {
+    result.data.allMarkDownRemark.edges.forEach(({node}) => {
+      createPage({
+        
+      })
+    })
+  })
 }
