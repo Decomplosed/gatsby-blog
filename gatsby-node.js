@@ -12,3 +12,5 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     })
   }
 }
+
+exports.createPages = ({ graphql, actions }) => {}
