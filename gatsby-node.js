@@ -17,21 +17,22 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return graphql(`
-  {
-    allMarkdownRemark {
-      edges {
-        node {
-          fields {
-            slug
+    {
+      allMarkdownRemark {
+        edges {
+          node {
+            fields {
+              slug
+            }
           }
         }
       }
     }
-  }
   `).then(result => {
-    result.data.allMarkDownRemark.edges.forEach(({node}) => {
+    result.data.allMarkDownRemark.edges.forEach(({ node }) => {
       createPage({
-        
+        path: node.fields.slug,
+        component: path.resolve(`./src/templates/blog-post.js`)
       })
     })
   })
