@@ -9,18 +9,28 @@ const BlogLink = styled(Link)`
   text-decoration: none;
 `
 
+const BlogTitle = styled.h3`
+  margin-bottom: 20px;
+  color: rebeccapurple;
+`
+
+const MainTitle = styled.h1`
+  color: rebeccapurple;
+`
+
 export default ({ data }) => (
   <Layout>
     <SEO title='Home' />
     <div>
-      <h1>Bart's Thoughts</h1>
-      <h4>{data.allMarkdownRemark.totalCount}</h4>
+      <MainTitle>
+        Bart's Thoughts ({data.allMarkdownRemark.totalCount})
+      </MainTitle>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
           <BlogLink to={node.fields.slug}>
-            <span>
+            <BlogTitle>
               {node.frontmatter.title} - {node.frontmatter.date}
-            </span>
+            </BlogTitle>
           </BlogLink>
           <p>{node.excerpt}</p>
         </div>
