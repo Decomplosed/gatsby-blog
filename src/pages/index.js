@@ -17,9 +17,11 @@ export default ({ data }) => (
       <h4>{data.allMarkdownRemark.totalCount}</h4>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
-          <span>
-            {node.frontmatter.title} - {node.frontmatter.date}
-          </span>
+          <BlogLink>
+            <span>
+              {node.frontmatter.title} - {node.frontmatter.date}
+            </span>
+          </BlogLink>
           <p>{node.excerpt}</p>
         </div>
       ))}
