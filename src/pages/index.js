@@ -17,7 +17,7 @@ export default ({ data }) => (
       <h4>{data.allMarkdownRemark.totalCount}</h4>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
-          <BlogLink>
+          <BlogLink to={node.fields.slug}>
             <span>
               {node.frontmatter.title} - {node.frontmatter.date}
             </span>
