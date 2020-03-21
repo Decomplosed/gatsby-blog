@@ -5,6 +5,10 @@ import styled from 'styled-components'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
+const BlogLink = styled(Link)`
+  text-decoration: none;
+`
+
 export default ({ data }) => (
   <Layout>
     <SEO title='Home' />
